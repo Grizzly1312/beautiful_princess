@@ -1,10 +1,17 @@
 # a little space for us
 
-A simple, static Valentine's Day page — a hero section plus a photo/message gallery. No build tools, no backend, just HTML/CSS/JS. Free to host on GitHub Pages.
+A simple, static Valentine's Day page — a hero section plus a photo/message gallery. No build tools, no backend, just plain HTML/CSS/JS, split into three files so it's easy to edit. Free to host on GitHub Pages.
+
+## Files
+
+- `index.html` — the page structure and content (text, photo slots, captions)
+- `style.css` — all the styling (colors, fonts, layout, animations)
+- `script.js` — the small scroll-in animation for the gallery cards
+- `images/` — put your own photos in here
 
 ## 1. Customize it
 
-Open `index.html` in any text editor:
+Open `index.html` in any text editor — you'll mostly work in this file:
 
 - **Hero text** — edit the headline inside `<h1>every reason I <em>choose you</em></h1>` and the sentence below it.
 - **Gallery captions** — each photo card is an `<article class="card">` block; edit the text inside `<p class="caption">...</p>`.
@@ -27,6 +34,8 @@ Open `index.html` in any text editor:
 - **Add or remove cards** — copy/paste a whole `<article class="card">...</article>` block to add one, or delete a block to remove one. The `style="--r:-3deg"` bit is just a slight rotation for the scattered-photo look — any small value between -3deg and 3deg looks good.
 - **Closing note** — edit the text in the `<section class="note">` block near the bottom.
 
+**Want to change colors or fonts?** Open `style.css` instead — the colors are defined once at the top under `:root` (e.g. `--wine: #7A2E43;`), so changing a value there updates it everywhere it's used.
+
 ## 2. Preview it locally
 
 Just double-click `index.html` to open it in a browser. No server needed.
@@ -34,7 +43,7 @@ Just double-click `index.html` to open it in a browser. No server needed.
 ## 3. Put it on GitHub Pages
 
 1. Create a new repository on GitHub (public, since GitHub Pages on the free tier needs a public repo — or use a private repo if your org has Pages enabled for private repos).
-2. Add these files to the repo root: `index.html` and the `images/` folder (with your photos inside).
+2. Add these files to the repo root: `index.html`, `style.css`, `script.js`, and the `images/` folder (with your photos inside).
 3. Commit and push.
 4. In the repo, go to **Settings → Pages**.
 5. Under **Build and deployment → Source**, choose **Deploy from a branch**.
@@ -48,5 +57,5 @@ Just double-click `index.html` to open it in a browser. No server needed.
 ## Notes
 
 - Photos are loaded straight from the `images/` folder, so keep file sizes reasonable (a few hundred KB each) so the page loads fast.
-- Everything is self-contained in `index.html` — no npm install, no build step.
+- No npm install, no build step — `index.html`, `style.css`, and `script.js` just need to sit in the same folder.
 - If you'd rather not have Google Fonts load from an external CDN, you can remove the two `<link>` tags in `<head>` and the page will fall back to system fonts.
